@@ -1,6 +1,6 @@
 # Expert Failure Taxonomy (skeleton)
 
-total routes: 212  |  non-clean: 42
+total routes: 211  |  non-clean: 41
 
 classification: (a) integration/env  (b) fixable logic  (c) structural ceiling
 
@@ -25,7 +25,6 @@ classification: (a) integration/env  (b) fixable logic  (c) structural ceiling
 | RouteScenario_24206_rep0 | Failed - Simulation crashed | 0.0 | - |  |  |
 | RouteScenario_24224_rep0 | Completed | 50.0 | collisions_pedestrian:1, min_speed_infractions:20 |  |  |
 | RouteScenario_24816_rep0 | Failed - Simulation crashed | 0.0 | - |  |  |
-| RouteScenario_25378_rep0 | Failed - Simulation crashed | 0.0 | - |  |  |
 | RouteScenario_25854_rep0 | Failed - Simulation crashed | 0.0 | - |  |  |
 | RouteScenario_25896_rep0 | Failed - Simulation crashed | 0.0 | - |  |  |
 | RouteScenario_26401_rep0 | Completed | 60.0 | collisions_vehicle:1, min_speed_infractions:18 |  |  |

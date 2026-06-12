@@ -1,6 +1,6 @@
 # LEAD tfv6 — Bench2Drive-220 Failure Taxonomy v0
 
-Baseline: mean Driving Score **88.96** over 212 scored routes (single checkpoint `model_0030_0`; published 3-seed ensemble ref 95.28).
+Baseline: mean Driving Score **89.38** over 211 scored routes (single checkpoint `model_0030_0`; published 3-seed ensemble ref 95.28).
 
 Failures classified: **50**  —  (a) integration/env: **22**  ·  (b) fixable logic: **28**  ·  (c) structural ceiling (candidate): **0**
 
@@ -15,7 +15,7 @@ Failures classified: **50**  —  (a) integration/env: **22**  ·  (b) fixable l
 | 24206 | Failed - Simulation crashed | 0.0 |
 | 24759 | Started | None |
 | 24816 | Failed - Simulation crashed | 0.0 |
-| 25378 | Failed - Simulation crashed | 0.0 |
+| 25378 | Started | None |
 | 25381 | Started | None |
 | 25854 | Failed - Simulation crashed | 0.0 |
 | 25857 | Started | None |

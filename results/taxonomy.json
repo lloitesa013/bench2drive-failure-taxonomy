@@ -325,20 +325,6 @@
       "fix_difficulty": "",
       "hypothesis": "",
       "infractions": {},
-      "route_id": "RouteScenario_25378_rep0",
-      "scores": {
-        "score_composed": 0.0,
-        "score_penalty": 1.0,
-        "score_route": 0.0
-      },
-      "status": "Failed - Simulation crashed",
-      "town": "Town03"
-    },
-    {
-      "classification": "",
-      "fix_difficulty": "",
-      "hypothesis": "",
-      "infractions": {},
       "route_id": "RouteScenario_25854_rep0",
       "scores": {
         "score_composed": 0.0,
@@ -686,6 +672,6 @@
       "town": "Town13"
     }
   ],
-  "non_clean_count": 42,
-  "total_routes": 212
+  "non_clean_count": 41,
+  "total_routes": 211
 }

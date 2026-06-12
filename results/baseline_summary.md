@@ -1,12 +1,12 @@
 # LEAD tfv6 — Bench2Drive baseline summary
 
-routes evaluated: **212** / 220
+routes evaluated: **211** / 220
 
-**Driving Score (mean score_composed): 88.96**  (published TFv6 ref: 95.28)
+**Driving Score (mean score_composed): 89.38**  (published TFv6 ref: 95.28)
 
-mean route completion: 93.15
+mean route completion: 93.59
 
-completed (clean status): 192 / 212
+completed (clean status): 192 / 211
 
 
 ## Infraction totals (sum across routes)
@@ -194,7 +194,6 @@ completed (clean status): 192 / 212
 | 25300 | Town04 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:19, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
 | 25318 | Town05 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:18, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
 | 25358 | Town06 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:19, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
-| 25378 | Town03 | Failed - Simulation crashed | 0.00 | 0.00 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:0, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
 | 25383 | Town15 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:18, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
 | 25424 | Town11 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:19, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
 | 25439 | Town15 | Completed | 100.00 | 100 | 1.00 | collisions_layout:0, collisions_pedestrian:0, collisions_vehicle:0, min_speed_infractions:18, outside_route_lanes:0, red_light:0, route_dev:0, route_timeout:0, scenario_timeouts:0, stop_infraction:0, vehicle_blocked:0, yield_emergency_vehicle_infractions:0 |
