@@ -43,9 +43,36 @@ checkpoint, the published number uses a 3-seed ensemble. See [CLAIMS.md](CLAIMS.
 - ⚠️ **Pedestrian collisions** on 2 crossing scenarios (DS 50) — safety-critical.
 - ⚠️ A handful of **route-deviation / lane-departure** failures on highway exits & interurban flows.
 
-(c) is deliberately a *candidate-only* label: a structural ceiling cannot be asserted from a
-learned model alone — it needs an **expert** (PDM-Lite / LEAD-expert) comparison to confirm.
-That comparison is the planned next artifact.
+## v1.0 — Expert-calibrated (NEW)
+
+We ran the **privileged PDM-Lite expert** (carla_garage) on the *identical* 220 routes and
+calibrated every model failure against it. A route the expert solves but the model fails is a
+**fixable model gap**; a route the expert *also* fails is a **structural-ceiling candidate**.
+Expert mean DS **95.71** (188/208 clean). Of the model's **50 non-clean routes**:
+
+| bucket | n | meaning |
+| --- | --- | --- |
+| **(b) fixable model gap** | **28** | model DS<100, expert DS=100 |
+| **(c) structural-ceiling candidate** | **4** | model & expert both DS<100 (e.g. route 23910 InterurbanActorFlow → expert DS 17.7) |
+| **(a) shared sim/infra** | **12** | both crash (heavy Town12/13) — real benchmark fragility |
+| **(a\*) model/harness-specific** | **6** | model crashes, **expert runs clean** (Town05/02) — *not* benchmark |
+
+Two findings that need the expert to see:
+- **Most model failures are fixable** (28/32). `YieldToEmergencyVehicle` (model 0/4 → expert 4/4)
+  is a clean missing-behavior gap, not a benchmark ceiling.
+- **A coherent structural cluster** — `OppositeVehicleTakingPriority`, `InvadingTurn`,
+  `MergerIntoSlowTrafficV2`, `InterurbanActorFlow`, `*JunctionLeftTurnEnterFlow` — where the
+  **privileged expert is no better, or worse, than the sensorimotor model**: traffic-merging /
+  right-of-way negotiation is structurally hard, not a perception gap.
+- **Calibration reclassifies 6 of 18 model "crashes"** as model/harness-specific (the expert runs
+  them) rather than simulator fragility — a distinction invisible from the model's score alone.
+
+Artifacts: **[results/expert/calibration_report.md](results/expert/)** (per-route a/b/c/a\*),
+**[results/expert/per_scenario_report.md](results/expert/)** (44 scenario classes),
+**[figs/](figs/)** (route scatter + per-scenario pass-rates), raw expert per-route JSON under
+`results/expert/per_route/`, and **[scripts/expert_vs_model.py](scripts/)** /
+`per_scenario.py` / `figs.py`. (c) remains a *candidate* label: PDM-Lite is a strong reference,
+not an oracle — see [CLAIMS.md](CLAIMS.md).
 
 ## Scope & honesty
 

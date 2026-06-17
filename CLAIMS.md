@@ -17,6 +17,11 @@ and explicitly disclaim what it does not.
    infraction record (the evidence ships in `results/`).
 4. **Systematic findings**, e.g. `YieldToEmergencyVehicle` failing on 4/4 instances — a
    reproducible, scenario-type-level weakness, not a single flaky route.
+5. **(v1.0) An expert-calibrated taxonomy.** The privileged PDM-Lite expert run on the identical
+   220 routes, with each model failure bucketed by whether the expert solves it: **28** fixable
+   model gaps (b), **4** structural-ceiling candidates (c), **12** shared sim/infra (a), **6**
+   model/harness-specific crashes (a\*). Per-route and per-scenario evidence ship in
+   `results/expert/`. This separation is *only* possible with the expert reference.
 
 ## What this is NOT (explicit non-claims)
 
@@ -25,11 +30,14 @@ and explicitly disclaim what it does not.
 2. **Not the published 95.28.** That figure uses a **3-seed ensemble**; we run a **single**
    checkpoint (`model_0030_0`). The ~2-point gap is the expected cost of dropping the ensemble,
    not a discrepancy in the agent or benchmark.
-3. **Not an expert taxonomy.** This analyzes a *learned sensorimotor model*, whose failures are
-   largely *expected*. It does **not** establish where the privileged *expert* (PDM-Lite /
-   LEAD-expert — the "answer key" that training data is distilled from) fails. The (c)
-   "structural ceiling" label is therefore a **candidate only**; confirming it requires an
-   expert run under the same protocol (the planned next artifact).
+3. **The expert is a reference, not an oracle.** v1.0 *adds* an expert calibration: PDM-Lite
+   (carla_garage privileged expert) run on the identical 220 routes (expert mean DS 95.71),
+   used to split model failures into (b) fixable / (c) structural-ceiling-candidate and to
+   reclassify "crashes" into shared-infra (a) vs model-specific (a\*). But PDM-Lite is itself an
+   imperfect rule-based agent — **"(c)" means the expert *also* failed, i.e. a structural-ceiling
+   *candidate*, not a proven ceiling.** Three small environment-compatibility shims were applied
+   to run the expert on modern numpy + an external GPU CARLA (disclosed in `MANIFEST.md`); none
+   change PDM-Lite's driving policy.
 4. **Not full-coverage of all 220 routes.** A subset of routes did not complete on this setup
    (CARLA sim crash / hang under the long unattended run). These are reported transparently in
    `results/` and excluded from the DS mean (rather than scored 0 and hidden inside an inflated
