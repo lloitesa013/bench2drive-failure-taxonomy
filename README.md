@@ -74,6 +74,16 @@ Artifacts: **[results/expert/calibration_report.md](results/expert/)** (per-rout
 `per_scenario.py` / `figs.py`. (c) remains a *candidate* label: PDM-Lite is a strong reference,
 not an oracle — see [CLAIMS.md](CLAIMS.md).
 
+## v1.1 — structural-cluster forensics + multi-seed variance (NEW)
+
+The expert's structural-cluster failures are **collisions** during right-of-way / actor-flow
+negotiation (DS 14–65) — the **class**, not a single route, is the ceiling. Multi-seed reruns
+(up to 3 traffic-manager seeds) give mean per-route DS SD **3.97**, with **3/18 routes flipping
+pass↔fail** across seeds (e.g. EnterActorFlow 2201 = 100/100/60), placing the (c) verdict at the
+**class** level rather than the route level. See
+[results/expert/structural_cluster_forensics.md](results/expert/),
+[results/expert/multiseed_variance.md](results/expert/), and [CHANGELOG.md](CHANGELOG.md).
+
 ## Scope & honesty
 
 See **[CLAIMS.md](CLAIMS.md)** for exactly what is and is not claimed. In short: this is a
